@@ -55,12 +55,13 @@ function renderLicenseSection(license) {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(answers) {
-    return `
+function generateMarkdown(data) {
+    return `# ${data.title}
+
 
     ## Description
 
-    ${answers.descr}
+    ${data.descr}
 
     ## Table of Contents
 
@@ -80,31 +81,36 @@ function generateMarkdown(answers) {
 
     To install necessary dependencies, run the following command:
 
-    ``
-    ${answers.dependencies}
-    ``
+    
+    ${data.dependencies}
+    
 
     ## Usage
 
-    ${answers.repo}
+    ${data.repo}
 
     ## License
 
-    ${answers.license}
+    ${data.license}
+    ${renderLicenseSection(data.license)}
 
     ## Contributing
 
-    ${answers.contribtute}
+    ${data.contribtute}
 
     ## Tests
 
-    To run tests, run the following command:
+    To run tests, enter the following command:
 
-    ${answers.tests}
+    ${data.tests}
 
     ## Questions
 
-    If you have any questions about the repo, open an issue or contact me directly at ${answers.email}. You can find more of my work at ${answers.github}.
+    If you have any questions about the repo, open an issue or contact me directly at ${
+        data.email
+    }. You can find more of my work at my [GitHub Page](https://github.com/${
+        data.github
+    }) .
 `;
 }
 
