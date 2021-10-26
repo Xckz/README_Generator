@@ -1,5 +1,5 @@
 // Packages needed for this application
-const { prompt } = require("inquirer");
+const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 
@@ -66,7 +66,7 @@ function writeToFile(fileName, data) {
 }
 
 async function promptUser() {
-    const answers = await prompt(questions);
+    const answers = await inquirer.prompt(questions);
     const fileName = `${answers.title}`;
     const data = await generateMarkdown(answers);
     writeToFile(fileName, data);

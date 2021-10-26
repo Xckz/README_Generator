@@ -59,58 +59,56 @@ function generateMarkdown(data) {
     return `# ${data.title}
 
 
-    ## Description
+## Description
 
-    ${data.descr}
+${data.descr}
 
-    ## Table of Contents
+## Table of Contents
 
-    * [Installation](#installation)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
-    * [Usage](#usage)
+## Installation
 
-    * [License](#license)
+To install necessary dependencies, run the following command:
 
-    * [Contributing](#contribute)
 
-    * [Tests](#tests)
+${data.dependencies}
 
-    * [Questions](#questions)
 
-    ## Installation
+## Usage
 
-    To install necessary dependencies, run the following command:
+${data.repo}
 
-    
-    ${data.dependencies}
-    
+## License
 
-    ## Usage
+${data.license}
+</br>
+${renderLicenseSection(data.license)}
 
-    ${data.repo}
+## Contributing
 
-    ## License
+${data.contribute}
 
-    ${data.license}
-    ${renderLicenseSection(data.license)}
+## Tests
 
-    ## Contributing
+To run tests, enter the following command:
 
-    ${data.contribtute}
 
-    ## Tests
+${data.tests}
 
-    To run tests, enter the following command:
 
-    ${data.tests}
+## Questions
 
-    ## Questions
-
-    If you have any questions about the repo, open an issue or contact me directly at ${
+If you have any questions about the repo, open an issue or contact me directly at ${
         data.email
     }. You can find more of my work at my [GitHub Page](https://github.com/${
         data.github
-    }) .
+    }).
 `;
 }
 
